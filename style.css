@@ -46,7 +46,7 @@ nav {
   position: fixed;
   background: #111;
   backdrop-filter: blur(24px);
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid transparent;
   z-index: 999;
   width: 100%;
   display: flex;
@@ -56,10 +56,11 @@ nav {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  padding: 12px;
+  padding: 26px;
 }
 
 nav .logo {
+  font-size: 24px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -67,14 +68,18 @@ nav .logo {
 }
 
 nav .logo a {
-  color: #2747ff;
-  font-weight: 600;
-  font-family: "JetBrains Mono";
+  color: #f0f8ff;
+  font-weight: 500;
+  font-family: "Archivo";
   transition: 0.4s ease;
 }
 
+nav .logo span {
+  color: #2747ff;
+}
+
 nav .logo a:hover {
-  color: crimson;
+  transform: scale(1.1);
 }
 
 nav .nav-links {
@@ -82,14 +87,14 @@ nav .nav-links {
   gap: 24px;
 }
 
-nav .nav-links a {
-  font-size: 16px;
+nav .nav-links i {
+  font-size: 24px;
   font-weight: 500;
-  color: #f5f5f5;
+  color: #f0f8ff;
   transition: all 0.3s ease;
 }
 
-nav .nav-links a:hover {
+nav .nav-links i:hover {
   color: #2747ff;
 }
 
@@ -107,7 +112,6 @@ nav .nav-links a:hover {
   max-width: 520px;
   width: 38%;
   border-radius: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .hero .secao-esquerda {
@@ -117,16 +121,17 @@ nav .nav-links a:hover {
 }
 
 .typewriter {
-  color: #2747ff;
+  color: #f0f8ff;
   font-size: 38px;
   margin-bottom: 24px;
 }
+
 .typewriter:after {
   content: "|";
   color: #2747ff;
-  margin-left: 5px;
+  margin-left: 6px;
   opacity: 1;
-  animation: pisca 1s infinite;
+  animation: pisca 1.3s infinite;
 }
 
 @keyframes pisca {
@@ -140,8 +145,8 @@ nav .nav-links a:hover {
 }
 
 .hero .secao-esquerda .topo p {
-  color: #f5f5f5;
-  font-size: 18px;
+  color: #b0c4de;
+  font-size: 20px;
   margin-bottom: 24px;
   text-align: justify;
 }
@@ -162,8 +167,8 @@ nav .nav-links a:hover {
   border-radius: 12px;
   gap: 5px;
   font-weight: 500;
-  transition: all 0.3s ease-in-out;
-  animation: shake 0.92s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  transition: all 0.4s ease-in-out;
+  animation: shake 1.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
 }
 
 .projetos .interno > button:hover,
@@ -179,11 +184,11 @@ nav .nav-links a:hover {
 .hero .secao-esquerda .topo .botoes button {
   font-size: 16px;
   border: none;
-  padding: 5px 20px;
+  padding: 8px 20px;
   margin-right: 5px;
   background: #f5f5f5;
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: 6px;
   gap: 5px;
   font-weight: 500;
   transition: all 0.3s ease-in-out;
@@ -201,42 +206,13 @@ nav .nav-links a:hover {
 
 .hero .secao-esquerda .topo .botoes button.git {
   padding: 0.5em 1em;
+  animation: beat 0.8s infinite alternate;
 }
 
 .hero .secao-esquerda .topo .botoes button.git:hover {
   background: #000;
   color: #fff;
   border-color: transparent;
-  animation: beat 0.4s infinite alternate;
-  transform-origin: center;
-}
-
-.hero .secao-esquerda .fundo p {
-  font-size: 22px;
-  font-weight: 500;
-  color: #2747ff;
-  margin-bottom: 10px;
-}
-
-.hero .secao-esquerda .fundo .icones {
-  margin-left: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 24px;
-  cursor: pointer;
-  width: fit-content;
-}
-
-.hero .secao-esquerda .fundo .icones a {
-  cursor: pointer;
-  color: #f5f5f5;
-  transition: all 0.3s ease;
-}
-
-.hero .secao-esquerda .fundo .icones a:hover {
-  color: #2747ff;
-  animation: beat 0.4s infinite alternate;
   transform-origin: center;
 }
 
@@ -249,18 +225,21 @@ nav .nav-links a:hover {
 }
 
 .sobre > p {
-  font-size: 22px;
-  color: #131313;
-  padding: 8px 18px;
-  border-radius: 16px;
-  margin-bottom: 12px;
-  background: #f5f5f5;
+  color: #f0f8ff;
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.sobre > p span {
+  color: #2747ff;
+  font-size: 36px;
 }
 
 .sobre > h2 {
-  color: #e8e8e8;
+  color: #fffa;
   margin-top: 0.5em;
-  font-size: 22px;
+  font-size: 20px;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -274,7 +253,7 @@ nav .nav-links a:hover {
 .sobre .items .item {
   width: 26%;
   border-radius: 16px;
-  background: transparent;
+  background: #000;
   padding: 0 0 30px;
   margin-top: 30px;
 }
@@ -309,7 +288,7 @@ nav .nav-links a:hover {
 
 .sobre .items .item .interno p {
   text-align: center;
-  color: #f5f5f5;
+  color: #fffa;
   font-size: 15px;
 }
 
@@ -318,15 +297,20 @@ nav .nav-links a:hover {
 }
 
 .contato > h2 {
-  color: #f5f5f5;
-  font-size: 32px;
+  color: #f0f8ff;
+  font-size: 36px;
   margin-bottom: 40px;
   text-align: center;
 }
 
+.contato > h2 span {
+  color: #2747ff;
+  font-size: 36px;
+}
+
 .contato .items {
   display: flex;
-  background: #000a;
+  background: #000;
   border-radius: 12px;
 }
 
@@ -355,7 +339,7 @@ nav .nav-links a:hover {
 
 .contato .items .item p {
   font-size: 20px;
-  color: #f5f5f5;
+  color: #fffa;
   margin-bottom: 26px;
 }
 
@@ -365,20 +349,34 @@ nav .nav-links a:hover {
   color: #f5f5f5;
 }
 
+footer {
+  background: #f0f8ff;
+  border-radius: 18px 18px 0 0;
+  font-size: 22px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+footer a {
+  color: #111;
+}
+
 @media screen and (max-width: 1280px) {
   .hero .secao-esquerda .topo h2 {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .hero .secao-esquerda .topo p {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .hero .secao-esquerda .topo .botoes button,
   .projetos .interno > button,
   .contato .items .item button {
-    font-size: 14px;
-    padding: 8px 14px;
+    font-size: 18px;
+    padding: 16px 20px;
   }
 
   .hero .secao-esquerda .topo .botoes button i {
@@ -396,7 +394,7 @@ nav .nav-links a:hover {
   }
 
   .sobre .items .item .interno p {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .projetos .interno .items {
@@ -409,21 +407,26 @@ nav .nav-links a:hover {
   }
 
   .contato .items .item a {
-    font-size: 18px;
+    font-size: 22px;
   }
 }
 
 @media screen and (max-width: 992px) {
+  nav .logo {
+    font-size: 22px;
+  }
+
   .hero {
-    margin-top: 5px;
+    margin-top: 10px;
     flex-direction: column;
     justify-content: center;
     height: calc(100vh - 100px);
   }
 
   .typewriter {
+    padding-top: 10em;
+    padding-bottom: 10%;
     margin-bottom: 0;
-    padding-bottom: 10px;
   }
 
   .hero .secao-esquerda .topo p {
@@ -432,7 +435,7 @@ nav .nav-links a:hover {
   }
 
   .hero > img {
-    margin-top: 10%;
+    padding: 6em 0;
   }
 
   .hero .secao-esquerda {
@@ -460,28 +463,45 @@ nav .nav-links a:hover {
     height: 200px;
   }
 
+  .contato {
+    margin-top: 4em;
+  }
+
+  .contato > h2 {
+    font-size: 36px;
+  }
+
   .contato .items .item button {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
   nav,
   nav .nav-links {
     gap: 20px;
   }
 
   .hero {
+    margin-top: 12em;
     padding: 0 20px;
   }
 
   .hero > img {
-    width: 78%;
-    margin-bottom: 2%;
+    margin-top: 4em;
+    width: 80%;
+  }
+
+  .sobre {
+    margin-top: 20em;
   }
 
   .sobre > h2 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .sobre .items .item {
@@ -498,7 +518,7 @@ nav .nav-links a:hover {
   }
 
   .projetos .interno > h2 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .projetos .interno p.info {
@@ -530,12 +550,12 @@ nav .nav-links a:hover {
   }
 
   .contato {
-    margin-top: -30%;
-    padding: 100px 40px;
+    margin-top: 4em;
+    padding: 80px 40px;
   }
 
   .contato > h2 {
-    font-size: 22px;
+    font-size: 30px;
   }
 
   .contato .items {
